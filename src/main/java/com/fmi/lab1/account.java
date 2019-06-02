@@ -40,6 +40,7 @@ public class account implements Serializable {
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Date date = new Date();
         this.creationDate = format.format(date);
+        this.Inbox = new inbox();
     }
     public void print(){
         if(this.username != null)

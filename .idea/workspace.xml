@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db5b3bf6-6115-45f7-ad66-831df135d813" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/47fd8c7a-7b48-4541-97be-00aadb0c351a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/47fd8c7a-7b48-4541-97be-00aadb0c351a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,11 +69,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+            <state relative-caret-position="238">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2702#2703#0" expanded="true" />
@@ -113,9 +117,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-355">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="-174">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#938#939#0" expanded="true" />
                 <element signature="e#972#973#0" expanded="true" />
               </folding>
@@ -123,11 +128,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
+            <state relative-caret-position="106">
+              <caret line="188" selection-start-line="188" selection-end-line="188" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1469#1485#0" expanded="true" />
@@ -138,19 +143,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.16.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/db.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="1730" selection-start-line="1730" selection-end-line="1730" />
+            <state relative-caret-position="198">
+              <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/db.sql">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/47fd8c7a-7b48-4541-97be-00aadb0c351a/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+            <state relative-caret-position="34">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -180,12 +185,12 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/db.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/inbox.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/47fd8c7a-7b48-4541-97be-00aadb0c351a/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" />
       </list>
     </option>
   </component>
@@ -277,8 +282,8 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559509150281" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559511386094" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.16.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -341,12 +346,12 @@
       <workItem from="1554320339243" duration="4251000" />
       <workItem from="1554324977116" duration="637000" />
       <workItem from="1559426475735" duration="4749000" />
-      <workItem from="1559474534741" duration="25431000" />
+      <workItem from="1559474534741" duration="27514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69932000" />
+    <option name="totallyTimeSpent" value="72015000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,7 +364,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17927383" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -401,9 +405,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java</url>
-          <line>125</line>
+          <line>165</line>
           <properties />
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -463,6 +467,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.16.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.16.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="1730" selection-start-line="1730" selection-end-line="1730" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/47fd8c7a-7b48-4541-97be-00aadb0c351a/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/db.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/inbox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -476,10 +508,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-174">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1469#1485#0" expanded="true" />
+            <element signature="e#5858#5869#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
+        <state relative-caret-position="238">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2702#2703#0" expanded="true" />
@@ -492,63 +548,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#938#939#0" expanded="true" />
-            <element signature="e#972#973#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.16.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="14" column="50" lean-forward="true" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/47fd8c7a-7b48-4541-97be-00aadb0c351a/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.16.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="1730" selection-start-line="1730" selection-end-line="1730" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="130" column="30" lean-forward="true" selection-start-line="130" selection-start-column="30" selection-end-line="130" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1469#1485#0" expanded="true" />
-            <element signature="e#5858#5869#0" expanded="true" />
           </folding>
         </state>
       </provider>

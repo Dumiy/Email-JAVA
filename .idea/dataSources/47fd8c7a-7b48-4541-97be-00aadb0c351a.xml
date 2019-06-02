@@ -6914,7 +6914,7 @@
     </column>
     <column id="1154" parent="345" name="object">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -6926,8 +6926,7 @@
     </column>
     <column id="1156" parent="345" name="action">
       <Position>4</Position>
-      <DataType>varchar(45)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(150)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="1157" parent="345" name="PRIMARY">

@@ -114,8 +114,8 @@ public class database implements Serializable {
         result.executeUpdate();
         }
         public int getUserIndex(String sending,int unique) throws SQLException {
-            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (id,object,time,action)"+
-                            "VALUES (?,?,?,?)");
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (object,time,action)"+
+                            "VALUES (?,?,?)");
             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
             Date date = new Date();
             java.sql.Date jsqlD =
@@ -133,11 +133,10 @@ public class database implements Serializable {
                 }
             }
             if (ok == false) {
-                String action = "Search for user" + sending;
-                audit.setInt(1,unique);
-                audit.setString(2,"User Searching of ID" + person.getString(1));
-                audit.setDate(3,jsqlD);
-                audit.setString(4,action);
+                String action = "Search for user " + sending;
+                audit.setString(1,"User Searching of ID" + unique+":"  + person.getString(1));
+                audit.setDate(2,jsqlD);
+                audit.setString(3,action);
                 audit.executeUpdate();
                 return person.getInt(1);
 
@@ -146,8 +145,8 @@ public class database implements Serializable {
         }
         public void receiveEmail(int key, email receive) throws SQLException, FileNotFoundException,IOException {
             ArrayList <Character> helper = new ArrayList<Character>();
-            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (id,object,time,action)"+
-                    "VALUES (?,?,?,?)");
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (object,time,action)"+
+                    "VALUES (?,?,?)");
             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
             Date date = new Date();
             java.sql.Date jsqlD =
@@ -163,11 +162,10 @@ public class database implements Serializable {
             for(account find : this.accountList){
                 if(find.getKey() == key) {
                     find.getInbox().addEmail(receive);
-                    String action = "Sended object" + receive;
-                    audit.setInt(1,key);
-                    audit.setString(2,helper.toString());
-                    audit.setDate(3,jsqlD);
-                    audit.setString(4,action);
+                    String action = "Sended object" + key +" :" + receive;
+                    audit.setString(1,helper.toString());
+                    audit.setDate(2,jsqlD);
+                    audit.setString(3,action);
                     audit.executeUpdate();
                     break;
                 }
@@ -204,8 +202,8 @@ public class database implements Serializable {
 
         }
         public account getAccount(int Key,int hash) throws SQLException {
-            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (id,object,time,action)"+
-                    "VALUES (?,?,?,?)");
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (object,time,action)"+
+                    "VALUES (?,?,?)");
             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
             account found = null;
             Date date = new Date();
@@ -214,11 +212,10 @@ public class database implements Serializable {
             Boolean ok = true;
             for(account find : this.accountList) {
                 if (find.getKey() == Key && find.hashCode() ==hash) {
-                    String action = "Login user ";
-                    audit.setInt(1, Key);
-                    audit.setString(2, "LOGIN SUCCES");
-                    audit.setDate(3, jsqlD);
-                    audit.setString(4, action);
+                    String action = "Login user " + Key;
+                    audit.setString(1, "LOGIN SUCCES");
+                    audit.setDate(2, jsqlD);
+                    audit.setString(3, action);
                     ok = false;
                     found = find;
                     audit.executeUpdate();
@@ -226,11 +223,10 @@ public class database implements Serializable {
                 }
             }
             if(ok == true){
-                String action = "Failed login ";
-                audit.setInt(1, Key);
-                audit.setString(2, "FAIL LOGIN");
-                audit.setDate(3, jsqlD);
-                audit.setString(4, action);
+                String action = "Failed login " + Key;
+                audit.setString(1, "FAIL LOGIN");
+                audit.setDate(2, jsqlD);
+                audit.setString(3, action);
             }
         return found;
         }
