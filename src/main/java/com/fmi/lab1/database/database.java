@@ -1,20 +1,20 @@
 package com.fmi.lab1.database;
 
 import com.fmi.lab1.account;
+import com.fmi.lab1.accountFunc;
+import com.fmi.lab1.email;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Date;
 
 
-public class database{
-    private List<account> accountList = new ArrayList<account>();
+public class database implements Serializable {
+    private ArrayList<account> accountList = new ArrayList<account>();
     private Connection dB ;
     public database(){
         try {
@@ -66,7 +66,7 @@ public class database{
                 Date date = new Date();
                 String creationDate = format.format(date);
                 account Tempo = new account(acc.get(0), acc.get(1), acc.get(2), acc.get(3), acc.get(4), j);
-                addUser(acc.get(0), acc.get(1), acc.get(2), acc.get(3), acc.get(4), j,date);
+                //addUser(acc.get(0), acc.get(1), acc.get(2), acc.get(3), acc.get(4), j,date);
                 this.accountList.add(Tempo);
                 j++;
                 i = 0;
@@ -114,12 +114,122 @@ public class database{
         result.setString(7,password);
         result.executeUpdate();
         }
-        public String getUserIndex(String email) throws SQLException {
-            Statement search = this.dB.createStatement();
-            ResultSet person = search.executeQuery("SELECT idusers FROM users WHERE ? = email");
-            if (email.equals(person.getString(1)))
-                return person.getString(1);
-            return "NULL";
+        public int getUserIndex(String sending,int unique) throws SQLException {
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (object,time,action)"+
+                            "VALUES (?,?,?)");
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            Date date = new Date();
+            java.sql.Date jsqlD =
+                    new java.sql.Date( date.getTime());
+            sending = sending.toUpperCase();
+            Statement search =  this.dB.createStatement();
+            ResultSet person = search.executeQuery("SELECT * FROM users");
+            Boolean ok = true;
+            while(person.next()){
+                if(person.getString("email").equals(sending)){
+                    {
+                        ok = false;
+                        break;
+                    }
+                }
+            }
+            if (ok == false) {
+                String action = "Search for user " + sending;
+                audit.setString(1,"User Searching of ID" + unique+":"  + person.getString(1));
+                audit.setDate(2,jsqlD);
+                audit.setString(3,action);
+                audit.executeUpdate();
+                return person.getInt(1);
+
+            }
+            return -1;
+        }
+        public void receiveEmail(int key, email receive) throws SQLException, FileNotFoundException,IOException {
+            ArrayList <Character> helper = new ArrayList<Character>();
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (object,time,action)"+
+                    "VALUES (?,?,?)");
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            Date date = new Date();
+            java.sql.Date jsqlD =
+                    new java.sql.Date( date.getTime());
+            FileOutputStream file = new FileOutputStream("dummy.txt");
+            ObjectOutputStream letter = new ObjectOutputStream(file);
+            letter.writeObject(receive);
+            FileInputStream getObject = new FileInputStream("dummy.txt");
+            int i;
+            while((i=getObject.read())!=-1)
+                helper.add((char) i);
+
+            for(account find : this.accountList){
+                if(find.getKey() == key) {
+                    find.getInbox().addEmail(receive);
+                    String action = "Sended object" + key +" :" + receive;
+                    audit.setString(1,helper.toString());
+                    audit.setDate(2,jsqlD);
+                    audit.setString(3,action);
+                    audit.executeUpdate();
+                    break;
+                }
+
+            }
+            file.close();
+            letter.close();
+            getObject.close();
+            File temp = new File("dummy.txt");
+
+            if(temp.delete())
+            {
+                System.out.println("File deleted successfully");
+            }
+            else
+            {
+                System.out.println("Failed to delete the file");
+            }
+
+
+        }
+        public account login(String username,String password) throws SQLException {
+        int temporary;
+        temporary = password.hashCode();
+        int verify = this.getUserIndex(username,0);
+        account founded = getAccount(verify,temporary);
+        if(founded == null){
+            System.out.println("FAILED");
+            return null;
+        }
+        else{
+            return founded;
+        }
+
+        }
+        public account getAccount(int Key,int hash) throws SQLException {
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (object,time,action)"+
+                    "VALUES (?,?,?)");
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            account found = null;
+            Date date = new Date();
+            java.sql.Date jsqlD =
+                    new java.sql.Date( date.getTime());
+            Boolean ok = true;
+            for(account find : this.accountList) {
+                if (find.getKey() == Key && find.hashCode() ==hash) {
+                    String action = "Login user " + Key;
+                    audit.setString(1, "LOGIN SUCCES");
+                    audit.setDate(2, jsqlD);
+                    audit.setString(3, action);
+                    ok = false;
+                    found = find;
+                    audit.executeUpdate();
+                    break;
+                }
+            }
+            if(ok == true){
+                String action = "Failed login " + Key;
+                audit.setString(1, "FAIL LOGIN");
+                audit.setDate(2, jsqlD);
+                audit.setString(3, action);
+            }
+        return found;
         }
     @Override
     public void finalize(){

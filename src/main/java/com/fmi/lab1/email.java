@@ -1,9 +1,10 @@
 package com.fmi.lab1;
+import java.io.Serializable;
 import java.util.Scanner;
-import com.fmi.lab1.inbox;
 
 
-public class email{
+
+public class email implements Serializable {
     private String contains;
     private boolean unread;
     private boolean read;
@@ -40,11 +41,15 @@ public class email{
         return this.target;
     }
     public void readEmail(){
+        display();
         this.unread = false;
         this.read = true;
     }
     public void unreadEmail(){
         this.unread = true;
         this.read = false;
+    }
+    public void display(){
+
     }
 }

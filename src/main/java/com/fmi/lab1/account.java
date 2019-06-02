@@ -1,12 +1,14 @@
 package com.fmi.lab1;
 import com.fmi.lab1.database.database;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class account{
+public class account implements Serializable,accountFunc {
 
     private String username;
     private String password;
@@ -38,6 +40,7 @@ public class account{
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         Date date = new Date();
         this.creationDate = format.format(date);
+        this.Inbox = new inbox();
     }
     public void print(){
         if(this.username != null)
@@ -58,14 +61,17 @@ public class account{
         Scanner key = new Scanner(System.in);
         this.password = key.next();
     }
-    public void CreateEmail(database Accounts, String email) throws SQLException {
+
+
+    public void CreateEmail(database Accounts, String email) throws SQLException, IOException {
         email newEmail = new email();
-        String response = Accounts.getUserIndex(newEmail.getEmail());
-        if(response.equals("NULL"))
+        int response = Accounts.getUserIndex(newEmail.getEmail(),this.unique);
+        if(response == -1)
             System.out.println("ERROR");
         else
         {
-
+        Accounts.receiveEmail(response,newEmail);
+        System.out.println("DONE");
         }
 
     }
@@ -84,7 +90,14 @@ public class account{
     public void setInbox(inbox newly){
         this.Inbox = newly;
     }
+    public int getKey(){
+        return this.unique;
+    }
+    @Override
+    public int hashCode(){
 
+        return password.hashCode();
+    }
 
 
 }
