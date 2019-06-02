@@ -85,7 +85,11 @@ public class account implements Serializable {
     public void setInbox(inbox newly){
         this.Inbox = newly;
     }
+    @Override
+    public int hashCode(){
 
+        return password.hashCode();
+    }
 
 
 }

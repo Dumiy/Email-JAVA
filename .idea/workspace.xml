@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db5b3bf6-6115-45f7-ad66-831df135d813" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/inbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/inbox.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -99,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="60" lean-forward="true" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
+            <state relative-caret-position="410">
+              <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2702#2703#0" expanded="true" />
@@ -128,8 +124,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="119" column="32" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+            <state relative-caret-position="172">
+              <caret line="108" column="33" lean-forward="true" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1469#1485#0" expanded="true" />
@@ -165,10 +161,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/db.sql" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/47fd8c7a-7b48-4541-97be-00aadb0c351a/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/inbox.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" />
       </list>
     </option>
   </component>
@@ -260,7 +256,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559496735038" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559497851557" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.16.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -324,12 +320,12 @@
       <workItem from="1554320339243" duration="4251000" />
       <workItem from="1554324977116" duration="637000" />
       <workItem from="1559426475735" duration="4749000" />
-      <workItem from="1559474534741" duration="17360000" />
+      <workItem from="1559474534741" duration="18303000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61861000" />
+    <option name="totallyTimeSpent" value="62804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -469,12 +465,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        <state relative-caret-position="410">
+          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2702#2703#0" expanded="true" />
+            <element signature="e#2728#2729#0" expanded="true" />
+            <element signature="e#2780#2781#0" expanded="true" />
+            <element signature="e#2813#2814#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -490,16 +490,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="60" lean-forward="true" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
+        <state relative-caret-position="170">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2702#2703#0" expanded="true" />
-            <element signature="e#2728#2729#0" expanded="true" />
-            <element signature="e#2780#2781#0" expanded="true" />
-            <element signature="e#2813#2814#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -519,8 +515,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="119" column="32" lean-forward="true" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+        <state relative-caret-position="172">
+          <caret line="108" column="33" lean-forward="true" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1469#1485#0" expanded="true" />

@@ -115,8 +115,9 @@ public class database{
         result.executeUpdate();
         }
         public String getUserIndex(String email) throws SQLException {
-            Statement search = this.dB.createStatement();
-            ResultSet person = search.executeQuery("SELECT idusers FROM users WHERE ? = email");
+            PreparedStatement person = this.dB.prepareStatement("SELECT idusers FROM users WHERE ? = email");
+            person.executeUpdate();
+            person.setString(1,email);
             if (email.equals(person.getString(1)))
                 return person.getString(1);
             return "NULL";
