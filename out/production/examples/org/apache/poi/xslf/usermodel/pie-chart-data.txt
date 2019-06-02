@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 My Chart
 First 1.0
 Second 3.0
+=======
+My Chart
+First 1.0
+Second 3.0
+>>>>>>> 09cd27a5507523bbde0818cbc630ee96363bb076
 Third 4.0
