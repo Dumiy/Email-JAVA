@@ -177,12 +177,49 @@ public class database implements Serializable {
 
 
         }
-        public Boolean login(String username,String password){
+        public account login(String username,String password) throws SQLException {
         int temporary;
         temporary = password.hashCode();
+        int verify = this.getUserIndex(username,0);
+        account founded = getAccount(verify,temporary);
+        if(founded == null){
+            System.out.println("FAILED");
+            return null;
+        }
+        else{
+            return founded;
+        }
 
-        return true;
-        //return false;
+        }
+        public account getAccount(int Key,int hash) throws SQLException {
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (id,object,time,action)"+
+                    "VALUES (?,?,?,?)");
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            account found = null;
+            Date date = new Date();
+            java.sql.Date jsqlD =
+                    new java.sql.Date( date.getTime());
+            Boolean ok = true;
+            for(account find : this.accountList) {
+                if (find.getKey() == Key && find.hashCode() ==hash) {
+                    String action = "Login user ";
+                    audit.setInt(1, Key);
+                    audit.setString(2, "LOGIN SUCCES");
+                    audit.setDate(3, jsqlD);
+                    audit.setString(4, action);
+                    ok = false;
+                    found = find;
+                    break;
+                }
+            }
+            if(ok == true){
+                String action = "Failed login ";
+                audit.setInt(1, Key);
+                audit.setString(2, "FAIL LOGIN");
+                audit.setDate(3, jsqlD);
+                audit.setString(4, action);
+            }
+        return found;
         }
     @Override
     public void finalize(){
