@@ -1,6 +1,7 @@
 package com.fmi.lab1;
 import com.fmi.lab1.database.database;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -59,14 +60,15 @@ public class account implements Serializable {
         Scanner key = new Scanner(System.in);
         this.password = key.next();
     }
-    public void CreateEmail(database Accounts, String email) throws SQLException {
+    public void CreateEmail(database Accounts, String email) throws SQLException, IOException {
         email newEmail = new email();
         int response = Accounts.getUserIndex(newEmail.getEmail(),this.unique);
         if(response == -1)
             System.out.println("ERROR");
         else
         {
-
+        Accounts.receiveEmail(response,newEmail);
+        System.out.println("DONE");
         }
 
     }

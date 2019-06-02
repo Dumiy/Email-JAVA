@@ -5,10 +5,7 @@ import com.fmi.lab1.email;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.Serializable;
+import java.io.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -68,7 +65,7 @@ public class database implements Serializable {
                 Date date = new Date();
                 String creationDate = format.format(date);
                 account Tempo = new account(acc.get(0), acc.get(1), acc.get(2), acc.get(3), acc.get(4), j);
-                addUser(acc.get(0), acc.get(1), acc.get(2), acc.get(3), acc.get(4), j,date);
+                //addUser(acc.get(0), acc.get(1), acc.get(2), acc.get(3), acc.get(4), j,date);
                 this.accountList.add(Tempo);
                 j++;
                 i = 0;
@@ -119,22 +116,73 @@ public class database implements Serializable {
         public int getUserIndex(String email,int unique) throws SQLException {
             PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (id,object,time,action)"+
                             "VALUES (?,?,?,?)");
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            Date date = new Date();
+            java.sql.Date jsqlD =
+                    new java.sql.Date( date.getTime());
             Statement search = this.dB.createStatement();
             ResultSet person = search.executeQuery("SELECT idusers FROM users WHERE " + email.toUpperCase() +" = email");
             if (email.equals(person.getString(1))) {
                 String action = "Search for user" + email;
+                audit.setInt(1,unique);
+                audit.setString(2,"User Searching of ID" + person.getString(1));
+                audit.setDate(3,jsqlD);
+                audit.setString(4,action);
                 return person.getInt(1);
 
             }
             return -1;
         }
-        public void receiveEmail(int key, email receive){
+        public void receiveEmail(int key, email receive) throws SQLException, FileNotFoundException,IOException {
+            ArrayList <Character> helper = new ArrayList<Character>();
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (id,object,time,action)"+
+                    "VALUES (?,?,?,?)");
+            SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            Date date = new Date();
+            java.sql.Date jsqlD =
+                    new java.sql.Date( date.getTime());
+            FileOutputStream file = new FileOutputStream("dummy.txt");
+            ObjectOutputStream letter = new ObjectOutputStream(file);
+            letter.writeObject(receive);
+            FileInputStream getObject = new FileInputStream("dummy.txt");
+            int i;
+            while((i=getObject.read())!=-1)
+                helper.add((char) i);
+
             for(account find : this.accountList){
-                if(find.getKey() == key)
+                if(find.getKey() == key) {
                     find.getInbox().addEmail(receive);
+                    String action = "Sended object" + receive;
+                    audit.setInt(1,key);
+                    audit.setString(2,helper.toString());
+                    audit.setDate(3,jsqlD);
+                    audit.setString(4,action);
                     break;
+                }
 
             }
+            file.close();
+            letter.close();
+            getObject.close();
+            File temp = new File("dummy.txt");
+
+            if(temp.delete())
+            {
+                System.out.println("File deleted successfully");
+            }
+            else
+            {
+                System.out.println("Failed to delete the file");
+            }
+
+
+        }
+        public Boolean login(String username,String password){
+        int temporary;
+        temporary = password.hashCode();
+
+        return true;
+        //return false;
         }
     @Override
     public void finalize(){
