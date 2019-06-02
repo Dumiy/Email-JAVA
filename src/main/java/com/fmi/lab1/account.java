@@ -61,8 +61,8 @@ public class account implements Serializable {
     }
     public void CreateEmail(database Accounts, String email) throws SQLException {
         email newEmail = new email();
-        String response = Accounts.getUserIndex(newEmail.getEmail());
-        if(response.equals("NULL"))
+        int response = Accounts.getUserIndex(newEmail.getEmail(),this.unique);
+        if(response == -1)
             System.out.println("ERROR");
         else
         {
@@ -84,6 +84,9 @@ public class account implements Serializable {
     }
     public void setInbox(inbox newly){
         this.Inbox = newly;
+    }
+    public int getKey(){
+        return this.unique;
     }
     @Override
     public int hashCode(){

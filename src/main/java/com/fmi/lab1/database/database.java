@@ -1,19 +1,21 @@
 package com.fmi.lab1.database;
 
 import com.fmi.lab1.account;
+import com.fmi.lab1.email;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.Serializable;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Date;
 
 
-public class database{
+public class database implements Serializable {
     private ArrayList<account> accountList = new ArrayList<account>();
     private Connection dB ;
     public database(){
@@ -114,16 +116,25 @@ public class database{
         result.setString(7,password);
         result.executeUpdate();
         }
-        public String getUserIndex(String email) throws SQLException {
-            PreparedStatement person = this.dB.prepareStatement("SELECT idusers FROM users WHERE ? = email");
-            person.executeUpdate();
-            person.setString(1,email);
-            if (email.equals(person.getString(1)))
-                return person.getString(1);
-            return "NULL";
-        }
-        public void receiveEmail(){
+        public int getUserIndex(String email,int unique) throws SQLException {
+            PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (id,object,time,action)"+
+                            "VALUES (?,?,?,?)");
+            Statement search = this.dB.createStatement();
+            ResultSet person = search.executeQuery("SELECT idusers FROM users WHERE " + email.toUpperCase() +" = email");
+            if (email.equals(person.getString(1))) {
+                String action = "Search for user" + email;
+                return person.getInt(1);
 
+            }
+            return -1;
+        }
+        public void receiveEmail(int key, email receive){
+            for(account find : this.accountList){
+                if(find.getKey() == key)
+                    find.getInbox().addEmail(receive);
+                    break;
+
+            }
         }
     @Override
     public void finalize(){

@@ -16,5 +16,11 @@ public class inbox {
     public Integer getLenght(){
         return this.lenght;
     }
+    public ArrayList returnInbox(inbox current){
+        if (current.lenght != 0)
+            return current.Inbox;
+        else
+            return null;
+    }
 
 }
