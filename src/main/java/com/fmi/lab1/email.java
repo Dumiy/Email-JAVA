@@ -1,6 +1,6 @@
 package com.fmi.lab1;
 import java.util.Scanner;
-import com.fmi.lab1.inbox;
+
 
 
 public class email{

@@ -14,7 +14,7 @@ import java.util.Date;
 
 
 public class database{
-    private List<account> accountList = new ArrayList<account>();
+    private ArrayList<account> accountList = new ArrayList<account>();
     private Connection dB ;
     public database(){
         try {
@@ -120,6 +120,9 @@ public class database{
             if (email.equals(person.getString(1)))
                 return person.getString(1);
             return "NULL";
+        }
+        public void receiveEmail(){
+
         }
     @Override
     public void finalize(){

@@ -1,12 +1,13 @@
 package com.fmi.lab1;
 import com.fmi.lab1.database.database;
 
+import java.io.Serializable;
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class account{
+public class account implements Serializable {
 
     private String username;
     private String password;
