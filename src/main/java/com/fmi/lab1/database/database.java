@@ -113,21 +113,32 @@ public class database implements Serializable {
         result.setString(7,password);
         result.executeUpdate();
         }
-        public int getUserIndex(String email,int unique) throws SQLException {
+        public int getUserIndex(String sending,int unique) throws SQLException {
             PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (id,object,time,action)"+
                             "VALUES (?,?,?,?)");
             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
             Date date = new Date();
             java.sql.Date jsqlD =
                     new java.sql.Date( date.getTime());
-            Statement search = this.dB.createStatement();
-            ResultSet person = search.executeQuery("SELECT idusers FROM users WHERE " + email.toUpperCase() +" = email");
-            if (email.equals(person.getString(1))) {
-                String action = "Search for user" + email;
+            sending = sending.toUpperCase();
+            Statement search =  this.dB.createStatement();
+            ResultSet person = search.executeQuery("SELECT * FROM users");
+            Boolean ok = true;
+            while(person.next()){
+                if(person.getString("email").equals(sending)){
+                    {
+                        ok = false;
+                        break;
+                    }
+                }
+            }
+            if (ok == false) {
+                String action = "Search for user" + sending;
                 audit.setInt(1,unique);
                 audit.setString(2,"User Searching of ID" + person.getString(1));
                 audit.setDate(3,jsqlD);
                 audit.setString(4,action);
+                audit.executeUpdate();
                 return person.getInt(1);
 
             }
@@ -157,6 +168,7 @@ public class database implements Serializable {
                     audit.setString(2,helper.toString());
                     audit.setDate(3,jsqlD);
                     audit.setString(4,action);
+                    audit.executeUpdate();
                     break;
                 }
 
@@ -209,6 +221,7 @@ public class database implements Serializable {
                     audit.setString(4, action);
                     ok = false;
                     found = find;
+                    audit.executeUpdate();
                     break;
                 }
             }
