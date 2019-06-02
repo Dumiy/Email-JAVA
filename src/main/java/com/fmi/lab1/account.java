@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class account implements Serializable {
+public class account implements Serializable,accountFunc {
 
     private String username;
     private String password;
@@ -61,6 +61,8 @@ public class account implements Serializable {
         Scanner key = new Scanner(System.in);
         this.password = key.next();
     }
+
+
     public void CreateEmail(database Accounts, String email) throws SQLException, IOException {
         email newEmail = new email();
         int response = Accounts.getUserIndex(newEmail.getEmail(),this.unique);
