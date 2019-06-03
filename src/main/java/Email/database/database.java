@@ -15,7 +15,8 @@ import java.util.Date;
 public class database implements Serializable {
     private ArrayList<account> accountList = new ArrayList<account>();
     private Connection dB ;
-    private auditWriter writer;
+    private auditWriter writer = new auditWriter() {
+    };
     public database(){
         try {
             connection();

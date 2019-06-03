@@ -9,8 +9,8 @@
         <module name="Proiect PAO" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Proiect PAO" target="1.5" />
+    <bytecodeTargetLevel target="11">
+      <module name="Proiect PAO" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

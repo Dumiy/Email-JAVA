@@ -31,16 +31,20 @@ public abstract class auditWriter {
         List<String[]> dataLines = new ArrayList<>();
         StringBuilder temporary = new StringBuilder();
         temporary.append(Id);
+        temporary.append(" ");
         temporary.append(date);
+        temporary.append(" ");
         temporary.append(action);
+        temporary.append(" ");
         temporary.append(created);
+        temporary.append(" ");
+        dataLines.add(new String[]
+                {temporary.toString()});
         dataLines.add(new String[]
                 {temporary.toString()});
         File csvOutputFile = new File("audit.csv");
         try (PrintWriter pw = new PrintWriter(csvOutputFile)) {
-            dataLines.stream()
-                    .map(this::convertToCSV)
-                    .forEach(pw::println);
+            pw.println(temporary);
         }
         assertTrue(csvOutputFile.exists());
     }
