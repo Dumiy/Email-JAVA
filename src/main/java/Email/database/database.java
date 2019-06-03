@@ -4,7 +4,7 @@ import Email.account;
 import Email.email;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import Email.database.auditWriter;
 import java.io.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -15,6 +15,7 @@ import java.util.Date;
 public class database implements Serializable {
     private ArrayList<account> accountList = new ArrayList<account>();
     private Connection dB ;
+    private auditWriter writer;
     public database(){
         try {
             connection();
@@ -167,6 +168,7 @@ public class database implements Serializable {
                     audit.setDate(2,jsqlD);
                     audit.setString(3,action);
                     audit.executeUpdate();
+                    writer.creatingAuditOutput(key,date,action,find);
                     break;
                 }
 
@@ -187,7 +189,7 @@ public class database implements Serializable {
 
 
         }
-        public account login(String username,String password) throws SQLException {
+        public account login(String username,String password) throws SQLException, IOException {
         int temporary;
         temporary = password.hashCode();
         int verify = this.getUserIndex(username,0);
@@ -201,7 +203,7 @@ public class database implements Serializable {
         }
 
         }
-        public account getAccount(int Key,int hash) throws SQLException {
+        public account getAccount(int Key,int hash) throws SQLException, IOException {
             PreparedStatement audit = this.dB.prepareStatement("INSERT INTO userlog (object,time,action)"+
                     "VALUES (?,?,?)");
             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -216,6 +218,7 @@ public class database implements Serializable {
                     audit.setString(1, "LOGIN SUCCES");
                     audit.setDate(2, jsqlD);
                     audit.setString(3, action);
+                    writer.creatingAuditOutput(Key,date,action,find);
                     ok = false;
                     found = find;
                     audit.executeUpdate();
@@ -227,6 +230,8 @@ public class database implements Serializable {
                 audit.setString(1, "FAIL LOGIN");
                 audit.setDate(2, jsqlD);
                 audit.setString(3, action);
+                audit.executeUpdate();
+                writer.creatingAuditOutput(Key,date,action,"FAILED");
             }
         return found;
         }

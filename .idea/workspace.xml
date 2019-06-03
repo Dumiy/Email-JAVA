@@ -2,32 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db5b3bf6-6115-45f7-ad66-831df135d813" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/accountFunc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/database/database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/database/databaseFunc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/database/db.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/database/emailFunc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Email/inbox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Email/database/auditWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Proiect PAO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect PAO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/account.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/accountFunc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/databaseFunc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/db.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/emailFunc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/email.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fmi/lab1/inbox.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fmi/lab1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fmi/lab1/account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fmi/lab1/database/database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fmi/lab1/email.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fmi/lab1/inbox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Email/database/database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Email/database/database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Email/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Email/account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Email/accountFunc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Email/database/database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Email/database/databaseFunc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Email/database/emailFunc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Email/email.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Email/inbox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GUI/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Proiect PAO.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fmi/lab1/database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db.sql" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -92,8 +83,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Email/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Email/account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-892">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="-646">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,11 +118,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Email/database/database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3459">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="196">
+              <caret line="197" column="41" selection-start-line="197" selection-start-column="41" selection-end-line="197" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Email/database/auditWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Email/database/db.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -141,6 +153,27 @@
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <caret column="17" selection-start-column="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Email/email.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Email/inbox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -185,6 +218,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fmi/lab1/database/database.java" />
         <option value="$PROJECT_DIR$/src/main/java/Email/database/databaseFunc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Email/email.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Email/database/auditWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Email/database/database.java" />
       </list>
     </option>
   </component>
@@ -207,8 +243,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="680" />
-    <option name="y" value="114" />
+    <option name="x" value="220" />
+    <option name="y" value="10" />
     <option name="width" value="860" />
     <option name="height" value="667" />
   </component>
@@ -218,6 +254,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,20 +288,10 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Email" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Proiect PAO" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Proiect PAO" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Email" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -276,7 +303,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559515385460" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1559588804244" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -301,7 +328,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Email.Main" />
       <module name="Proiect PAO" />
@@ -327,8 +354,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -360,12 +387,13 @@
       <workItem from="1559514344938" duration="118000" />
       <workItem from="1559514531234" duration="368000" />
       <workItem from="1559515154837" duration="212000" />
-      <workItem from="1559537479881" duration="414000" />
+      <workItem from="1559537479881" duration="3118000" />
+      <workItem from="1559587238002" duration="1352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75005000" />
+    <option name="totallyTimeSpent" value="79061000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -378,9 +406,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11951589" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19364598" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -400,12 +427,12 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50226927" side_tool="true" weight="0.34369886" />
-      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.4720121" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" sideWeight="0.4720121" visible="true" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24962178" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.14220877" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Maven" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
@@ -448,16 +475,6 @@
     <option name="version" value="1" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Email/database/database.java</url>
-          <line>243</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="person.getString(&quot;email&quot;)" language="JAVA" />
@@ -552,16 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Email/email.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Email/inbox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -569,30 +576,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Email/email.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="38" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Email/database/db.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Email/account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-892">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Email/database/database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3459">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -600,6 +597,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Email/account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -612,10 +619,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Email/database/auditWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Email/database/database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="197" column="41" selection-start-line="197" selection-start-column="41" selection-end-line="197" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Email/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -691,6 +718,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
